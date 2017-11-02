@@ -1,0 +1,31 @@
+﻿<Window x:Class="Telesharp.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Telesharp"
+        Title="Telesharp - Login" Width="640" Height="420">
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBlock Text="Welcome to Telesharp" FontSize="32" FontWeight="DemiBold" HorizontalAlignment="Center" />
+        <TextBlock Text="A free and open source C# Telegram client for Windows desktop" FontSize="16" Foreground="#606060" HorizontalAlignment="Center" Margin="0,0,0,20" />
+
+        <!-- phone number -->
+        <StackPanel x:Name="inputPhonePanel" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="Enter your phone number to continue:" Margin="0,0,4,0" />
+            <!-- TODO adorner country code and phone -->
+            <TextBox x:Name="phoneCode" MinWidth="30" MaxLength="6" TextChanged="phoneTextChanged" />
+            <TextBox x:Name="phoneNumber" MinWidth="80" MaxLength="15" TextChanged="phoneTextChanged" />
+        </StackPanel>
+        <!-- code -->
+        <StackPanel x:Name="inputCodePanel" Orientation="Horizontal" HorizontalAlignment="Center" Height="0">
+            <TextBlock Text="Enter the received code to continue:" Margin="0,0,4,0" />
+            <TextBox x:Name="telegramCode" MinWidth="40" MaxLength="5" TextChanged="telegramCodeTextChanged" />
+        </StackPanel>
+        <!-- success -->
+        <StackPanel x:Name="successPanel" Orientation="Horizontal" HorizontalAlignment="Center" Height="0">
+            <TextBlock Text="You've successfully logged in! Click the next button to continue" Margin="0,0,4,0" />
+        </StackPanel>
+
+        <Button x:Name="nextButton" Content="Next" Width="200" Height="40" Margin="0,10,0,0" Style="{StaticResource PlainButton}" Click="nextClick" />
+    </StackPanel>
+</Window>
